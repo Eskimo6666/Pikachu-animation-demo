@@ -155,6 +155,9 @@ var result = `
     transform:translateX(-50%); 
     overflow:hidden
 }
+/*
+*最最可爱的小舌头↓↓↓
+*/
 .lowerlip::after{
     content:'';
     position:absolute;
