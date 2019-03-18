@@ -3,16 +3,20 @@
 *::after{box-sizing:border-box;}
 body{
     display:flex;
+    display:-webkit-flex;
+    display:-ms-flexbox;
     flex-direction: column;
     height:100vh;
 }
 .code-wrapper{
     flex:1;
+    -webkit-box-flex:1;
     height:50%;
    
 }
 .preview-wrapper{
     flex:1;
+    -webkit-box-flex:1;
     height:50%;
 }
 
@@ -20,6 +24,8 @@ body{
   height:100%;
   
   display:flex;
+  display:-webkit-box;
+  display:-ms-flexbox;
   justify-content:center;
   align-items:center;
   background-color:rgb(254,228,51);
