@@ -11,7 +11,7 @@ function writeCode(prefix,code,fn){
             window.clearInterval(id)
             fn && fn.call()
         }    
-    },0)
+    },30)
 }
 
 var result = `
@@ -77,13 +77,13 @@ var result = `
     background:rgb(252,13,28);
     border-radius:50%;
     position:absolute;
+    border:3px solid black;
 }
 /*
 *右边开始画吧！
 */
 .face.right{
     right:50%;
-    border:2px solid black;
     margin-right:113px;
     margin-top:85px;
 }
@@ -92,7 +92,6 @@ var result = `
 */
 .face.left{
     left:50%;
-    border:2px solid black;
     margin-left:116px;
     margin-top:85px;
 }
@@ -148,7 +147,7 @@ var result = `
     height:1000px;
     background:rgb(153,5,19);
     border-radius:70px /300px;
-    border:2px solid black;
+    border:3px solid black;
     position:absolute;
     bottom:0;
     left:50%;

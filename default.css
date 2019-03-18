@@ -5,23 +5,29 @@ body{
     display:flex;
     display:-webkit-flex;
     display:-ms-flexbox;
+    display:-moz-box;
     flex-direction: column;
     height:100vh;
+    width:100vw;
 }
 .code-wrapper{
     flex:1;
+    -moz-box-flex:1;
     -webkit-box-flex:1;
     height:50%;
-   
+    min-height:0;
 }
 .preview-wrapper{
     flex:1;
+    -moz-box-flex:1;
+    -webkit-box-flex: 1;
     height:50%;
 }
 
 .preview{
   height:100%;
   display:flex;
+  display:-moz-box-flex;
   display:-webkit-flex;
   justify-content:center;
   align-items:center;
@@ -37,4 +43,5 @@ body{
 #code{
     overflow: hidden;
     height:100%;
+    
 }
