@@ -36,12 +36,27 @@ body{
 .wrapper{
   width:100%;
   height:165px;
-  
   position:relative;
   
 }
 #code{
     overflow: hidden;
-    height:100%;
-    
+    height:100%;   
+}
+.actions{
+  position:absolute;
+  right:0;
+  top:0;
+  display:flex;
+  flex-direction: column;
+  
+}
+.actions> button{
+  margin:13px 0;
+  padding:12px 10px;
+  border:none;
+  background:rgb(254,228,51);
+}
+.actions > button.active{
+  background:rgb(196, 162, 11);
 }

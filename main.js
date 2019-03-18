@@ -1,20 +1,44 @@
-function writeCode(prefix,code,fn){
-    let codeContainer = document.querySelector('#code')
-    let styleContainer = document.querySelector('#styleTag')
-    let n=0
-    let id = setInterval(()=>{
-        n+=1
-        codeContainer.innerHTML = prefix + code.slice(0,n)
-        styleContainer.innerHTML = prefix + code.slice(0,n)
-        codeContainer.scrollTop = codeContainer.scrollHeight
-        if(n >= code.length){
-            window.clearInterval(id)
-            fn && fn.call()
-        }    
-    },30)
-}
+!function () {
+    var duration = 50
+    $('.actions').on('click', 'button', function (e) {
+        let $button = $(e.currentTarget)   //用户点击的button
+        let speed = $button.attr('data-speed')
+        console.log(speed)
+        $button.addClass('active').siblings('.active').removeClass('active')
+        switch (speed) {
+            case 'low':
+                duration = 100
+                break
+            case 'medium':
+                duration = 50
+                break
+            case 'fast':
+                duration = 10
+                break
+        }
+    })
 
-var result = `
+
+    function writeCode(prefix, code, fn) {
+
+        let codeContainer = document.querySelector('#code')
+        let styleContainer = document.querySelector('#styleTag')
+        let n = 0
+        setTimeout(function run() {
+            n += 1
+            codeContainer.innerHTML = prefix + code.slice(0, n)
+            styleContainer.innerHTML = prefix + code.slice(0, n)
+            codeContainer.scrollTop = codeContainer.scrollHeight
+            if (n < code.length) {
+                setTimeout(run, duration)
+
+            } else {
+                fn && fn.call()
+            }
+        }, duration)
+    }
+
+    var result = `
 /*
 *开始画吧！
 *先画一个鼻子吧
@@ -174,6 +198,7 @@ var result = `
 */`
 
 
-writeCode('', result ,()=>{
-    console.log(2)
-})
+    writeCode('', result, () => {
+        console.log(2)
+    })
+}.call()
