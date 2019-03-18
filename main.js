@@ -11,7 +11,7 @@ function writeCode(prefix,code,fn){
             window.clearInterval(id)
             fn && fn.call()
         }    
-    },40)
+    },0)
 }
 
 var result = `
